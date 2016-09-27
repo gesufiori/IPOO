@@ -9,7 +9,6 @@ void convertir(char *p)
 int main ()
 {
 	char a='A';
-	a--;
 	convertir(&a);
     printf("%c",a);
     
