@@ -1,15 +1,16 @@
 /*ejercicio numero 1*/
+/*ejercicio numero 1*/
 #include <stdio.h>
-char convertir(char mayus[])
+void convertir(char *p)
 {
-	char minus;
-	minus = mayus + 32;
-	return minus;
-    
+	*p+=32;
 }
 
 int main ()
 {
-    printf("=>%c\n",convertir("A"));
+	char a='A';
+	a--;
+	convertir(&a);
+    printf("%c",a);
     
 }
