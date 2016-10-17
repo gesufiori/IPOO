@@ -50,16 +50,17 @@ void quitar(struct node *p,int posicion){
     }
     return;
 }
-void concatenar(struct node *p,struct node *q, int n){
-	struct node *s;
+void concatenar(struct node *p,struct node *q){
+	struct node *s, *w;
 	s=malloc(sizeof(struct node));
-	s=p->next;
-	int i;
-	n--;
-	for(i=0;i<n;i++){
+	w=malloc(sizeof(struct node));
+	s=p;
+	w=q;
+	while (s != NULL){
 		s=s->next;
 	}
-	s=q;
+	s->next = w;
+	return;
 }
 
 void poner(struct node *p,int posicion){
