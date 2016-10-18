@@ -55,17 +55,12 @@ void quitar(struct node *p,int posicion){
     free(q);
     free(w);
 }
-void concatenar(struct node *p,struct node *q){
-	struct node *s, *w;
-	s=malloc(sizeof(struct node));
-	w=malloc(sizeof(struct node));
-	s=p;
-	w=q;
-	while (s != NULL){
-		s=s->next;
-	}
-	s->next = w;
-	return;
+void concat(struct node * head1, struct node *head2)
+{
+	struct node *cur = head1;
+	for (; cur->next != NULL; cur = cur->next)
+    	;
+	cur->next = head2;
 }
 
 void poner(struct node *p,int posicion){
@@ -84,7 +79,7 @@ void poner(struct node *p,int posicion){
     }
     while(w!=NULL){
         if(w->n==posicion){
-            s->n=posicion;
+		s->n=posicion;
     		s->next=r;
     		q->next=s;
     		return ;
@@ -99,17 +94,17 @@ void poner(struct node *p,int posicion){
 }
 main(){
 	struct node *head, *head1;
-	head=malloc(sizeof(struct node));
+    head=malloc(sizeof(struct node));
 	head1=malloc(sizeof(struct node));
 	int n, y;
-	scanf("%d",&n);
-	scanf("%d",&y);
+    	scanf("%d",&n);
+    	scanf("%d",&y);
 	crear(head,n);
-	crear(head1,y);
-	poner(head,2);
-	quitar(head,4);
-	//mostrar(head);
-	mostrar(head1);
-	//concatenar(head,head1);
-	mostrar(head);
+    	crear(head1,y);
+    	poner(head,2);
+    	quitar(head,4);
+    	mostrar(head);
+    	mostrar(head1);
+	concat(head,head1);
+    	mostrar(head);
 }
