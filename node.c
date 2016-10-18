@@ -18,6 +18,8 @@ void crear(struct node *p,int m){
         vec=cur;
     }
     vec->next=NULL;
+    free(vec);
+    free(cur);
     return ;
 }
 void mostrar(struct node *p){
@@ -28,6 +30,7 @@ void mostrar(struct node *p){
         printf("%d\n",q->n);
         q=q->next;
     }
+    free(q);
     return ;
 }
 void quitar(struct node *p,int posicion){
@@ -49,6 +52,8 @@ void quitar(struct node *p,int posicion){
         w=w->next;
     }
     return;
+    free(q);
+    free(w);
 }
 void concatenar(struct node *p,struct node *q){
 	struct node *s, *w;
@@ -87,20 +92,26 @@ void poner(struct node *p,int posicion){
         q=q->next;
         w=w->next;
     }
+    free(s);
+    free(r);
+    free(w);
     return;
 }
 main(){
-	struct node *head; //*head1;
+	struct node *head, *head1;
     head=malloc(sizeof(struct node));
-    //head1=malloc(sizeof(struct node));
-	int n;
+	head1=malloc(sizeof(struct node));
+	int n, y;
     scanf("%d",&n);
-    crear(head,n);
-    //crear(head1,n);
+    scanf("%d",&y);
+	crear(head,n);
+    crear(head1,y);
     poner(head,2);
-    //quitar(head,4);
+    quitar(head,4);
     //mostrar(head);
-    //mostrar(head1);
-	//concatenar(head,head1,n);
+    mostrar(head1);
+	//concatenar(head,head1);
     mostrar(head);
+    free(head);
+    free(head1);
 }
