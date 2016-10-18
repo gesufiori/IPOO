@@ -112,6 +112,4 @@ main(){
     mostrar(head1);
 	//concatenar(head,head1);
     mostrar(head);
-    free(head);
-    free(head1);
 }
