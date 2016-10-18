@@ -99,17 +99,17 @@ void poner(struct node *p,int posicion){
 }
 main(){
 	struct node *head, *head1;
-    head=malloc(sizeof(struct node));
+	head=malloc(sizeof(struct node));
 	head1=malloc(sizeof(struct node));
 	int n, y;
-    scanf("%d",&n);
-    scanf("%d",&y);
+	scanf("%d",&n);
+	scanf("%d",&y);
 	crear(head,n);
-    crear(head1,y);
-    poner(head,2);
-    quitar(head,4);
-    //mostrar(head);
-    mostrar(head1);
+	crear(head1,y);
+	poner(head,2);
+	quitar(head,4);
+	//mostrar(head);
+	mostrar(head1);
 	//concatenar(head,head1);
-    mostrar(head);
+	mostrar(head);
 }
